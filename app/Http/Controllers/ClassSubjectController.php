@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subject;
 use App\Models\ClassModel;
+use App\Models\ClassSubject;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -12,8 +13,7 @@ class ClassSubjectController extends Controller
 {
     public function index()
     {
-        $subjects = Subject::with(['schoolClass', 'teacher'])->get();
-        dd($subjects);
+        $subjects = ClassSubject::with(['schoolClass', 'teacher','subject'])->get();
         return view('classsubjects.index', compact('subjects'));
     }
 
@@ -27,7 +27,7 @@ class ClassSubjectController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'class_id' => 'required|exists:classes,id',
+            'class_id' => 'required|exists:class_models,id',
             'subject_id' => [
                 'required',
                 Rule::unique('subjects')->where(function ($query) use ($request) {
@@ -39,7 +39,7 @@ class ClassSubjectController extends Controller
         ]);
 
         // Validate and store the subject
-        $subject = Subject::create($validatedData);
+        $subject = ClassSubject::create($validatedData);
         return redirect()->route('classsubjects.index');
     }
 

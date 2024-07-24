@@ -14,7 +14,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="teacher_id">Teacher</label>
                 <select id="teacher_id" name="teacher_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     @foreach($teachers as $teacher)
-                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                    <option value="{{ $teacher->id }}">{{ $teacher->first_name }} {{ $teacher->last_name}}</option>
                     @endforeach
                 </select>
             </div>

@@ -26,8 +26,12 @@ class StudentController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'gender' => 'required',
-            'date_of_birth' => 'required',
-            'admission_date' => 'required',
+            'date_of_birth' => 'required|date',
+            'admission_date' => 'required|date',
+            'class_id' => 'required|exists:class_models,id',
+            'address' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required|email|unique:students,email'
         ]);
 
         Student::create($request->all());

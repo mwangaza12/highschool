@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('gender', ['Male', 'Female']);
             $table->date('date_of_birth');
             $table->date('admission_date');
-            $table->foreignId('class_id')->nullable()->constrained('classes');
+            $table->foreignId('class_id')->nullable()->constrained('class_models');
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email')->nullable();

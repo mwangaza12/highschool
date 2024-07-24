@@ -4,7 +4,7 @@
 <div class="container mx-auto">
     <div class="py-6">
         <h1 class="text-2xl font-semibold mb-6">Edit Class: {{ $class->class_name }}</h1>
-        <form action="{{ route('classes.update', $class->class_id) }}" method="POST" class="max-w-md bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+        <form action="{{ route('classes.update', $class->id) }}" method="POST" class="max-w-md bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
             @csrf
             @method('PUT')
             <div class="mb-4">
@@ -15,7 +15,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="teacher_id">Teacher</label>
                 <select id="teacher_id" name="teacher_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     @foreach($teachers as $teacher)
-                    <option value="{{ $teacher->id }}" @if($teacher->id === $class->teacher_id) selected @endif>{{ $teacher->name }}</option>
+                    <option value="{{ $teacher->id }}" @if($teacher->id === $class->teacher_id) selected @endif>{{ $teacher->first_name }} {{ $teacher->last_nameprttfffe}}</option>
                     @endforeach
                 </select>
             </div>

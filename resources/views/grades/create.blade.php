@@ -17,7 +17,7 @@
                 <label for="class_subject_id" class="block text-sm font-medium text-gray-700">Class Subject:</label>
                 <select id="class_subject_id" name="class_subject_id" required class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                     @foreach($classSubjects as $classSubject)
-                        <option value="{{ $classSubject->id }}">{{ $classSubject->subject->name }} - {{ $classSubject->class->class_name }}</option>
+                        <option value="{{ $classSubject->id }}">{{ $classSubject->subject->name }} - {{ $classSubject->Schoolclass->class_name }}</option>
                     @endforeach
                 </select>
             </div>

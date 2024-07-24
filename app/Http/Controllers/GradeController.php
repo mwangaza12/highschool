@@ -18,7 +18,7 @@ class GradeController extends Controller
     public function create()
     {
         $students = Student::all();
-        $classSubjects = ClassSubject::all();
+        $classSubjects = ClassSubject::with(['schoolClass'])->get();
         return view('grades.create', compact('students', 'classSubjects'));
     }
 

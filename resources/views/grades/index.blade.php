@@ -13,6 +13,7 @@
                         <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grade</th>
                         <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Term</th>
                         <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Year</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         <th class="px-6 py-3 bg-gray-50"></th>
                     </tr>
                 </thead>
@@ -20,7 +21,7 @@
                     @foreach($grades as $grade)
                         <tr>
                             <td class="px-6 py-4">{{ $grade->student->first_name }} {{ $grade->student->last_name }}</td>
-                            <td class="px-6 py-4">{{ $grade->classSubject->subject->name }} - {{ $grade->classSubject->class->class_name }}</td>
+                            <td class="px-6 py-4">{{ $grade->classSubject->subject->name }} - {{ $grade->classSubject->subject_name }}</td>
                             <td class="px-6 py-4">{{ $grade->grade }}</td>
                             <td class="px-6 py-4">{{ $grade->term }}</td>
                             <td class="px-6 py-4">{{ $grade->year }}</td>

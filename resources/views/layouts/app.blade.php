@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>High School Management</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
@@ -26,6 +25,5 @@
         @yield('content')
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
