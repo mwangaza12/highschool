@@ -20,12 +20,12 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach($grades as $grade)
                         <tr>
-                            <td class="px-6 py-4">{{ $grade->student->first_name }} {{ $grade->student->last_name }}</td>
-                            <td class="px-6 py-4">{{ $grade->classSubject->subject->name }} - {{ $grade->classSubject->subject_name }}</td>
-                            <td class="px-6 py-4">{{ $grade->grade }}</td>
-                            <td class="px-6 py-4">{{ $grade->term }}</td>
-                            <td class="px-6 py-4">{{ $grade->year }}</td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4 text-left">{{ $grade->student->first_name }} {{ $grade->student->last_name }}</td>
+                            <td class="px-6 py-4 text-left">{{ $grade->classSubject->subject->name }} - {{ $grade->classSubject->subject_name }}</td>
+                            <td class="px-6 py-4 text-left">{{ $grade->grade }}</td>
+                            <td class="px-6 py-4 text-left">{{ $grade->term }}</td>
+                            <td class="px-6 py-4 text-left">{{ $grade->year }}</td>
+                            <td class="px-6 py-4 text-left">
                                 <a href="{{ route('grades.show', $grade->id) }}" class="text-blue-500 hover:underline">View</a>
                                 <a href="{{ route('grades.edit', $grade->id) }}" class="text-blue-500 hover:underline ml-2">Edit</a>
                                 <form action="{{ route('grades.destroy', $grade->id) }}" method="POST" class="inline">

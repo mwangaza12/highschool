@@ -17,11 +17,11 @@
             <tbody class="bg-white divide-y divide-gray-200">
                 @foreach ($subjects as $subject)
                 <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap">{{ $subject->id }}</td>
-                    <td class="px-6 py-4 whitespace-no-wrap">{{ $subject->schoolClass->class_name }}</td>
-                    <td class="px-6 py-4 whitespace-no-wrap">{{ $subject->subject->subject_name }}</td>
-                    <td class="px-6 py-4 whitespace-no-wrap">{{ $subject->teacher->first_name }} {{ $subject->teacher->last_name }}</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                    <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $subject->id }}</td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $subject->schoolClass->class_name }}</td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $subject->subject->subject_name }}</td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $subject->teacher->first_name }} {{ $subject->teacher->last_name }}</td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-left text-sm leading-5 font-medium">
                         <a href="{{ route('subjects.show', $subject->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
                         <a href="{{ route('subjects.edit', $subject->id) }}" class="text-indigo-600 hover:text-indigo-900 ml-2">Edit</a>
                         <form action="{{ route('subjects.destroy', $subject->id) }}" method="POST" class="inline-block">

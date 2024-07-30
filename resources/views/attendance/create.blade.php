@@ -9,7 +9,7 @@
             <label for="student_id" class="block text-sm font-medium text-gray-700">Student</label>
             <select name="student_id" id="student_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 @foreach($students as $student)
-                <option value="{{ $student->id }}">{{ $student->name }}</option>
+                <option value="{{ $student->id }}">{{ $student->first_name }} {{ $student->last_name }}</option>
                 @endforeach
             </select>
         </div>
@@ -17,7 +17,7 @@
             <label for="class_id" class="block text-sm font-medium text-gray-700">Class</label>
             <select name="class_id" id="class_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 @foreach($classes as $class)
-                <option value="{{ $class->id }}">{{ $class->name }}</option>
+                <option value="{{ $class->id }}">{{ $class->class_name }}</option>
                 @endforeach
             </select>
         </div>

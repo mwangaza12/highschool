@@ -7,23 +7,23 @@
         <table class="table-auto w-full">
             <thead>
                 <tr>
-                    <th class="px-4 py-2">ID</th>
-                    <th class="px-4 py-2">Name</th>
-                    <th class="px-4 py-2">Gender</th>
-                    <th class="px-4 py-2">Date of Birth</th>
-                    <th class="px-4 py-2">Class</th>
-                    <th class="px-4 py-2">Actions</th>
+                    <th class="px-4 py-2 text-left">ID</th>
+                    <th class="px-4 py-2 text-left">Name</th>
+                    <th class="px-4 py-2 text-left">Gender</th>
+                    <th class="px-4 py-2 text-left">Date of Birth</th>
+                    <th class="px-4 py-2 text-left">Class</th>
+                    <th class="px-4 py-2 text-left">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($students as $student)
                     <tr>
-                        <td class="border px-4 py-2">{{ $student->id }}</td>
-                        <td class="border px-4 py-2">{{ $student->first_name }} {{ $student->last_name }}</td>
-                        <td class="border px-4 py-2">{{ $student->gender }}</td>
-                        <td class="border px-4 py-2">{{ $student->date_of_birth }}</td>
-                        <td class="border px-4 py-2">{{ $student->class->class_name ?? 'N/A' }}</td>
-                        <td class="border px-4 py-2">
+                        <td class="border px-4 py-2 text-left">{{ $student->id }}</td>
+                        <td class="border px-4 py-2 text-left">{{ $student->first_name }} {{ $student->last_name }}</td>
+                        <td class="border px-4 py-2 text-left">{{ $student->gender }}</td>
+                        <td class="border px-4 py-2 text-left">{{ $student->date_of_birth }}</td>
+                        <td class="border px-4 py-2 text-left">{{ $student->class->class_name ?? 'N/A' }}</td>
+                        <td class="border px-4 py-2 text-left">
                             <a href="{{ route('students.show', $student->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block">View</a>
                             <a href="{{ route('students.edit', $student->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded inline-block">Edit</a>
                             <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">

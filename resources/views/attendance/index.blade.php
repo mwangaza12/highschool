@@ -12,21 +12,21 @@
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Class</th>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Date</th>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th class="px-6 py-3 bg-gray-50"></th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Actions</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
             @foreach($attendances as $attendance)
             <tr>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $attendance->attendance_id }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $attendance->student->name }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $attendance->class->name }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $attendance->date }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $attendance->status }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                    <a href="{{ route('attendances.show', $attendance->attendance_id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
-                    <a href="{{ route('attendances.edit', $attendance->attendance_id) }}" class="ml-4 text-yellow-600 hover:text-yellow-900">Edit</a>
-                    <form action="{{ route('attendances.destroy', $attendance->attendance_id) }}" method="POST" class="inline-block">
+                <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $attendance->attendance_id }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $attendance->student->name }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $attendance->class->name }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $attendance->date }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap text-left">{{ $attendance->status }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap text-left text-sm leading-5 font-medium">
+                    <a href="{{ route('attendance.show', $attendance->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
+                    <a href="{{ route('attendance.edit', $attendance->id) }}" class="ml-4 text-yellow-600 hover:text-yellow-900">Edit</a>
+                    <form action="{{ route('attendance.destroy', $attendance->id) }}" method="POST" class="inline-block">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-600 hover:text-red-900 ml-4">Delete</button>

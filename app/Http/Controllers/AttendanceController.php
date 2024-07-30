@@ -26,7 +26,7 @@ class AttendanceController extends Controller
     {
         $request->validate([
             'student_id' => 'required|exists:students,id',
-            'class_id' => 'required|exists:classes,id',
+            'class_id' => 'required|exists:class_models,id',
             'date' => 'required|date',
             'status' => 'required|in:Present,Absent,Late,Excused',
         ]);
